@@ -1,0 +1,11 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/Proyecto Consola/.vs/Proyecto Consola/v17
+/Proyecto Consola/.vscode
+/Proyecto Consola/bin
+/Proyecto Consola/obj
+/.vs
+/ProyectoEscuela/bin/Debug/netcoreapp2.1
+/ProyectoEscuela/obj
