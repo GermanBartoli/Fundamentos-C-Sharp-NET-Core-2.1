@@ -68,18 +68,54 @@ namespace ProyectoEscuela
             Console.WriteLine("Presione ENTER para continuar");
             Console.ReadLine();
             Console.WriteLine(arregloCursos[0].Nombre);
-            Console.WriteLine("Imprimir Cursos");
-            ImprimirCursos(arregloCursos);
+            Console.WriteLine("Imprimir Cursos While");
+            ImprimirCursosWhile(arregloCursos);
 
+            Console.WriteLine("Imprimir Cursos Do While");
+            ImprimirCursosDoWhile(arregloCursos);
+
+            Console.WriteLine("Imprimir Cursos For");
+            ImprimirCursosFor(arregloCursos);
+
+            Console.WriteLine("Imprimir Cursos ForEach");
+            ImprimirCursosForEach(arregloCursos)
         }
 
-        private static void ImprimirCursos(Curso[] arregloCursos)
+        private static void ImprimirCursosWhile(Curso[] arregloCursos)
         {
             int contador = 0;
             while (contador < arregloCursos.Length)
             {
                 Console.WriteLine($"Nombre: {arregloCursos[contador].Nombre}, Id: {arregloCursos[contador].UniqueID}");
                 contador++;
+            }
+        }
+
+        private static void ImprimirCursosDoWhile(Curso[] arregloCursos)
+        {
+            int contador = 0;
+            do
+            {
+                Console.WriteLine($"Nombre: {arregloCursos[contador].Nombre}, Id: {arregloCursos[contador].UniqueID}");
+                contador++;
+            //} while (++contador++ < arregloCursos.Length);
+            } while (contador < arregloCursos.Length);
+        }
+
+        private static void ImprimirCursosFor(Curso[] arregloCursos)
+        {
+            for (int i = 0; i < arregloCursos.Length; i++)
+            {
+                Console.WriteLine($"Nombre: {arregloCursos[i].Nombre}, Id: {arregloCursos[i].UniqueID}");
+
+            }
+        }
+
+        private static void ImprimirCursosForEach(Curso[] arregloCursos)
+        {
+            foreach (var curso in arregloCursos)
+            {
+                Console.WriteLine($"Nombre: {curso.Nombre}, Id: {curso.UniqueID}");
             }
         }
     }
