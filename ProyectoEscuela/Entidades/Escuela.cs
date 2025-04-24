@@ -24,6 +24,9 @@ namespace ProyectoEscuela.Entidades
         public string Ciudad { get; set; }
 
         public TipoEscuela TipoEscuela { get; set; }
+
+        public Curso[] arrayCursos { get; set; }
+
         public void Timbrar()
         {
             //Todo
