@@ -66,7 +66,7 @@ namespace ProyectoEscuela
             Console.WriteLine(curso2.Nombre + "," + curso2.UniqueID);
             Console.WriteLine(curso3.Nombre + "," + curso3.UniqueID);
             Console.WriteLine("Presione ENTER para continuar");
-            Console.ReadLine();
+            //Console.ReadLine();
             Console.WriteLine(arregloCursos[0].Nombre);
             Console.WriteLine("Imprimir Cursos While");
             ImprimirCursosWhile(arregloCursos);
@@ -116,6 +116,40 @@ namespace ProyectoEscuela
             escuela.arrayCursos = arregloCursosImpresion;
 
             ImprimirCursosEscuela(escuela);
+
+            //Clase 19
+
+            bool rta = 10 == 10;
+            int cantidad = 10;
+
+            if (!rta)
+            {
+                WriteLine("Se cumplio la condición 1 ");
+            }
+            else if (cantidad > 5)
+            {
+                WriteLine("Se cumplió la condición 2");
+            }
+            else {
+                WriteLine("No se cumplió la condición 1 y 2");
+            }
+
+            if (cantidad > 5 && rta == false)
+            {
+                WriteLine("se cumplió la condición 3");
+            }
+
+            if (cantidad > 5 && rta != false)
+            {
+                WriteLine("se cumplió la condición 4");
+            }
+
+            cantidad = 10;
+            if ((cantidad > 5 || rta) && (cantidad % 5 == 0))
+            {
+                WriteLine("se cumplió la condición 5");
+            }
+            // empezar 20
         }
 
         private static void ImprimirCursosWhile(Curso[] arregloCursos)
