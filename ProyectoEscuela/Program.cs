@@ -149,7 +149,11 @@ namespace ProyectoEscuela
             {
                 WriteLine("se cumplió la condición 5");
             }
-            // empezar 20
+            // Clase 20
+            // https://learn.microsoft.com/es-es/dotnet/csharp/language-reference/operators/
+
+            // Clase 21
+
         }
 
         private static void ImprimirCursosWhile(Curso[] arregloCursos)
