@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace ProyectoEscuela.Entidades
 {
@@ -26,6 +27,8 @@ namespace ProyectoEscuela.Entidades
         public TipoEscuela TipoEscuela { get; set; }
 
         public Curso[] arrayCursos { get; set; }
+
+        public List<Curso> lstCursos { get; set; }
 
         public void Timbrar()
         {

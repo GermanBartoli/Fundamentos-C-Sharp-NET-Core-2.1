@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ProyectoEscuela.Entidades;
 using static System.Console;
 namespace ProyectoEscuela
@@ -153,6 +154,42 @@ namespace ProyectoEscuela
             // https://learn.microsoft.com/es-es/dotnet/csharp/language-reference/operators/
 
             // Clase 21
+            //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/collections
+
+            // Clase 22 Uso de Colecciones en C#: Listas y Operaciones Básicas
+            WriteLine("Clase 22");
+            //System.Collections.Generic.
+            //System.Collections.Specialized;
+            var listaCursos = new List<Curso>()
+            {
+                new Curso()
+                {
+                    Nombre = "101"
+                },
+                new Curso()
+                {
+                    Nombre = "102"
+                },
+                 new Curso()
+                {
+                    Nombre = "103"
+                },
+            };
+
+            escuela.lstCursos = listaCursos;
+
+            escuela.lstCursos.Add(new Curso { Nombre="102", Jornada = TipoJornada.Mañana });
+
+            var lstaCursos22 = escuela.lstCursos;
+            escuela.lstCursos.AddRange(lstaCursos22);
+
+            escuela.lstCursos.Remove(curso3);
+
+            escuela.lstCursos.Clear();
+
+            // Clase 23 Eliminación de Elementos en Listas Usando Criterios en C#
+
+
 
         }
 
