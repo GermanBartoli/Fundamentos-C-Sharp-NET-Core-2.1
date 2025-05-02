@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ProyectoEscuela.Entidades
 {
-    class Escuela
+    public class Escuela
     {
         string nombre;
         int anioCreacion;

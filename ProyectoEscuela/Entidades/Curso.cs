@@ -5,7 +5,7 @@ using System.Xml;
 
 namespace ProyectoEscuela.Entidades
 {
-    internal class Curso
+    public class Curso
     {
         public string Nombre { get; set; }
         public string UniqueID { get; private set; }

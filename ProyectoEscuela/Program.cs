@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using ProyectoEscuela.App;
 using ProyectoEscuela.Entidades;
+using ProyectoEscuela.Util;
 using static System.Console;
 namespace ProyectoEscuela
 {
@@ -205,7 +207,36 @@ namespace ProyectoEscuela
 
             escuela.lstCursos.Remove(tmp);
 
+            // Clase 24: Delegados y Expresiones Lambda en C#
 
+            // Inferencias de tipos
+            escuela.lstCursos.RemoveAll(Predicate);
+
+            // Delegado o expreción lambda
+            escuela.lstCursos.RemoveAll(
+                delegate (Curso curso)
+                {
+                    return curso.Nombre == "101";
+                }
+            );
+
+            //Más compacto, lambda
+            escuela.lstCursos.RemoveAll((Curso curso) => curso.Nombre == "101");
+            escuela.lstCursos.RemoveAll((curso) => curso.Nombre == "101" && curso.Jornada == TipoJornada.Mañana);
+
+            // Clase 25: Refactorización y Organización de Código en C#
+            WriteLine("Clase 25");
+            WriteLine("Clase 25");
+            var engine = new EscuelaEngine();
+            engine.Inicializar();
+
+            // Clase 26: Clases estáticas en C#: Uso y beneficios prácticos
+            Printer.DibujarLinea(20);
+
+            Printer.WriteTitle("Bienvenidos a la Escuela");
+
+            Printer.Beep(10000, cantidad:10);
+            ImprimirCursosEscuelaLst(engine.Escuela);
         }
 
         private static bool Predicate(Curso obj)
@@ -268,8 +299,7 @@ namespace ProyectoEscuela
 
         private static void ImprimirCursosEscuelaLst(Escuela escuela)
         {
-            Console.WriteLine("==============");
-            Console.WriteLine("Impresión Cursos de la Escuela LST");
+            Printer.WriteTitle("Impresión Cursos de la Escuela LST");
 
             if (escuela?.arrayCursos != null)
                 foreach (var curso in escuela.lstCursos)
