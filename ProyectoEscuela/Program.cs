@@ -185,12 +185,32 @@ namespace ProyectoEscuela
 
             escuela.lstCursos.Remove(curso3);
 
-            escuela.lstCursos.Clear();
+            // escuela.lstCursos.Clear();
 
             // Clase 23 Eliminación de Elementos en Listas Usando Criterios en C#
 
+            Curso tmp = new Curso() {Nombre = "101-Vacacional", Jornada = TipoJornada.Noche  };
+
+            Predicate<Curso> miAlgoritmo = Predicate ;
+
+            // Llama a la función por cada uno que está en la lista
+            //Apuntador función
+            escuela.lstCursos.RemoveAll(miAlgoritmo);
+
+            escuela.lstCursos.Add(tmp);
+
+            WriteLine("Curso.Hash: " + tmp.GetHashCode());
+
+            ImprimirCursosEscuelaLst(escuela);
+
+            escuela.lstCursos.Remove(tmp);
 
 
+        }
+
+        private static bool Predicate(Curso obj)
+        {
+            return obj.Nombre == "101";
         }
 
         private static void ImprimirCursosWhile(Curso[] arregloCursos)
@@ -242,6 +262,21 @@ namespace ProyectoEscuela
                 WriteLine($"Nombre: {curso.Nombre}, Id: {curso.UniqueID}");
 
             }
+
+            Console.WriteLine("==============");
+        }
+
+        private static void ImprimirCursosEscuelaLst(Escuela escuela)
+        {
+            Console.WriteLine("==============");
+            Console.WriteLine("Impresión Cursos de la Escuela LST");
+
+            if (escuela?.arrayCursos != null)
+                foreach (var curso in escuela.lstCursos)
+                {
+                    WriteLine($"Nombre: {curso.Nombre}, Id: {curso.UniqueID}");
+
+                }
 
             Console.WriteLine("==============");
         }
