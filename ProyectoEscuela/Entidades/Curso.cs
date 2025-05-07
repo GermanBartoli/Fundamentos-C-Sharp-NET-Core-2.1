@@ -12,12 +12,20 @@ namespace ProyectoEscuela.Entidades
         public TipoJornada Jornada { get; set; }
         public List<Asignatura> lstAsignaturas { get; set; }
         public List<Alumno> lstAlumnos { get; set; }
-        public Curso(string nombre = "") {
-            UniqueID = Guid.NewGuid().ToString();
-        }
+        //public Curso(string nombre = "") {
+        //    UniqueID = Guid.NewGuid().ToString();
+        //}
 
         // O
 
-        public Curso()=> UniqueID = Guid.NewGuid().ToString();
+        //public Curso()=> UniqueID = Guid.NewGuid().ToString();
+
+        public Curso(string nombre = "")
+        {
+            UniqueID = Guid.NewGuid().ToString();
+            Nombre = nombre;
+            lstAsignaturas = new List<Asignatura>();
+            lstAlumnos = new List<Alumno>();
+        }
     }
 }

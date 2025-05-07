@@ -21,11 +21,11 @@ namespace ProyectoEscuela.App
 
             CargarCursos();
 
-            foreach (var curso in Escuela.lstCursos)
-            {
-                curso.lstAlumnos.AddRange(CargarAlumnos());
+            //foreach (var curso in Escuela.lstCursos)
+            //{
+            //    curso.lstAlumnos.AddRange(GenerarAlumnosAlAzar());
 
-            }
+            //}
 
             CargarAsignaturas();
 
@@ -53,9 +53,9 @@ namespace ProyectoEscuela.App
             }
         }
 
-        private IEnumerable<Alumno> CargarAlumnos()
+        private List<Alumno> GenerarAlumnosAlAzar(int cantidad)
         {
-            string[] nombre1 = { "nombre1", "nombre2" };
+            string[] nombre1 = { "nombre1", "nombre2", "a", "b", "c" };
             string[] nombre2 = { "nombre1", "nombre2" };
             string[] apellido1 = { "apellido1", "apellido2" };
 
@@ -64,7 +64,8 @@ namespace ProyectoEscuela.App
                              from n2 in nombre2
                              from a1 in apellido1
                              select new Alumno { Nombre= $"{n1} {n2} {a1}" };
-            return lstAlumnos;
+
+            return lstAlumnos.OrderBy((al) => al.UniqueId).Take(cantidad).ToList();
             
         }
 
@@ -83,6 +84,15 @@ namespace ProyectoEscuela.App
             Escuela.lstCursos.Add(new Curso { Nombre="105", Jornada = TipoJornada.Mañana });
 
             Escuela.lstCursos.Add(new Curso { Nombre="106", Jornada = TipoJornada.Mañana });
+
+            Random rnd = new Random();
+
+            foreach (var c in Escuela.lstCursos)
+            {
+                int cantRandom = rnd.Next(5, 20);
+                c.lstAlumnos = GenerarAlumnosAlAzar(cantRandom);
+            }
+
         }
     }
 }
