@@ -7,10 +7,11 @@ namespace ProyectoEscuela.Entidades
 {
     public class Curso
     {
-        public string Nombre { get; set; }
         public string UniqueID { get; private set; }
+        public string Nombre { get; set; }
         public TipoJornada Jornada { get; set; }
-
+        public List<Asignatura> lstAsignaturas { get; set; }
+        public List<Alumno> lstAlumnos { get; set; }
         public Curso(string nombre = "") {
             UniqueID = Guid.NewGuid().ToString();
         }

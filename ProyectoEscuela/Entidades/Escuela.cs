@@ -9,6 +9,8 @@ namespace ProyectoEscuela.Entidades
         int anioCreacion;
         string ciudad;
 
+        public string UniqueID { get; private set; } = Guid.NewGuid().ToString();
+
         public string Nombre
         {
             get { return "Copia: " + nombre; }
