@@ -235,7 +235,7 @@ namespace ProyectoEscuela
 
             Printer.WriteTitle("Bienvenidos a la Escuela");
 
-            Printer.Beep(10000, cantidad:10);
+            Printer.Beep(10000, cantidad:1);
             ImprimirCursosEscuelaLst(engine.Escuela);
         }
 

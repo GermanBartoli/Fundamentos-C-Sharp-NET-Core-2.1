@@ -33,9 +33,36 @@ namespace ProyectoEscuela.App
 
         }
 
+        // Implementar la carga aleatoria de evaluaciones
+        // 5 evaluaciones x asignatura por cada alumno de cada curso
+        // Notas al azar entre 0.0 y 5.0
+
         private void CargarEvaluaciones()
         {
-            throw new NotImplementedException();
+            foreach (var curso in Escuela.lstCursos)
+            {
+                foreach (var asignatura in curso.lstAsignaturas)
+                {
+                    foreach (var alumno in curso.lstAlumnos)
+                    {
+                        var rnd = new Random(System.Environment.TickCount);
+
+                        for (int i = 0; i < 5; i++)
+                        {
+                            var ev = new Evaluacion
+                            {
+                                Asignatura = asignatura,
+                                Nombre = $"{asignatura.Nombre} Ev#{i+1}",
+
+                                Nota = (float)(5 * rnd.NextDouble()),
+                                Alumno = alumno
+                            };
+
+                            alumno.lstEvaluaciones.Add(ev);
+                        }
+                    }
+                }
+            }
         }
 
         private void CargarAsignaturas()
